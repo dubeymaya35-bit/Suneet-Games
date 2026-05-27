@@ -1,30 +1,31 @@
-// Function to launch and open a game in the iframe popup
+// Universal Game Player Controller (Like Poki)
 function playGame(gameName, gameUrl) {
-    const modal = document.getElementById("gameModal");
-    const gameFrame = document.getElementById("gameFrame");
-    const gameTitle = document.getElementById("modalGameTitle");
-
-    // Change title and load game URL into the iframe
-    gameTitle.innerText = "Playing: " + gameName;
+    const modal = document.getElementById('gameModal');
+    const modalTitle = document.getElementById('modalGameTitle');
+    const gameFrame = document.getElementById('gameFrame');
+    
+    // Set the title of the popup box to the game you clicked
+    modalTitle.innerText = gameName;
+    
+    // Inject the real game URL directly into the viewing window frame
     gameFrame.src = gameUrl;
-
-    // Show the popup on screen
-    modal.style.display = "flex";
+    
+    // Reveal the popup window onto the screen
+    modal.style.display = 'block';
 }
 
-// Function to stop the game and close the popup
 function closeGame() {
-    const modal = document.getElementById("gameModal");
-    const gameFrame = document.getElementById("gameFrame");
-
-    // Hide the popup and clear iframe source so the audio stops playing
-    modal.style.display = "none";
-    gameFrame.src = "";
+    const modal = document.getElementById('gameModal');
+    const gameFrame = document.getElementById('gameFrame');
+    
+    // Clear the source so the game music stops playing when closed
+    gameFrame.src = ''; 
+    modal.style.display = 'none';
 }
 
-// Close modal if user clicks outside of the game box area
+// Close the modal player if the user clicks anywhere outside of the game box
 window.onclick = function(event) {
-    const modal = document.getElementById("gameModal");
+    const modal = document.getElementById('gameModal');
     if (event.target == modal) {
         closeGame();
     }
