@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JodSuneetGames | Play Online HTML5 Games</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <div class="logo">🚀JodSuneetGames</div>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Arcade</a>
-            <a href="#">Action</a>
-            <a href="#">Casual</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section class="featured-section">
+<section class="featured-section">
             <h2>🔥 Featured Game</h2>
             <div class="featured-banner">
                 <div class="featured-info">
                     <h3>RocketFM</h3>
                     <p>Tune into the right frequencies to navigate your rocket through space in this addictive, offline-ready arcade classic.</p>
-                    <button class="play-btn" onclick="playGame('RocketFM', 'https://example.com/rocketfm-game-link')">Play Now</button>
+                    <button class="play-btn" onclick="playGame('RocketFM', 'https://html5.gamedistribution.com/405c00612981466cbc5d9dcef4214811/')">Play Now</button>
                 </div>
             </div>
         </section>
@@ -35,51 +14,44 @@
             <div class="games-grid">
                 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #ff007f;">🕹️</div>
+                    <div class="card-thumb">
+                        <img src="https://img.gamedistribution.com/398188048995484594c7b805445693c0-512x512.jpeg" alt="Space Dodge" class="game-img">
+                    </div>
                     <div class="card-info">
                         <h4>Space Dodge</h4>
-                        <button class="play-btn-sm" onclick="playGame('Space Dodge', 'https://html5.gamedistribution.com/example1/')">Play</button>
+                        <button class="play-btn-sm" onclick="playGame('Space Dodge', 'https://html5.gamedistribution.com/398188048995484594c7b805445693c0/')">Play</button>
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #7f00ff;">🧩</div>
+                    <div class="card-thumb">
+                        <img src="https://img.gamedistribution.com/fc200164c6794697968ff221efcb8680-512x512.jpeg" alt="Cyber Puzzle" class="game-img">
+                    </div>
                     <div class="card-info">
                         <h4>Cyber Puzzle</h4>
-                        <button class="play-btn-sm" onclick="playGame('Cyber Puzzle', 'https://html5.gamedistribution.com/example2/')">Play</button>
+                        <button class="play-btn-sm" onclick="playGame('Cyber Puzzle', 'https://html5.gamedistribution.com/fc200164c6794697968ff221efcb8680/')">Play</button>
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #00f0ff;">🚗</div>
+                    <div class="card-thumb">
+                        <img src="https://img.gamedistribution.com/a42df6422f984535b91b8f0bc277f093-512x512.jpeg" alt="Neon Racer" class="game-img">
+                    </div>
                     <div class="card-info">
                         <h4>Neon Racer</h4>
-                        <button class="play-btn-sm" onclick="playGame('Neon Racer', 'https://html5.gamedistribution.com/example3/')">Play</button>
+                        <button class="play-btn-sm" onclick="playGame('Neon Racer', 'https://html5.gamedistribution.com/a42df6422f984535b91b8f0bc277f093/')">Play</button>
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #ffaa00;">👾</div>
+                    <div class="card-thumb">
+                        <img src="https://img.gamedistribution.com/2b56e6f98299449f85cb5b263b821430-512x512.jpeg" alt="Retro Invaders" class="game-img">
+                    </div>
                     <div class="card-info">
                         <h4>Retro Invaders</h4>
-                        <button class="play-btn-sm" onclick="playGame('Retro Invaders', 'https://html5.gamedistribution.com/example4/')">Play</button>
+                        <button class="play-btn-sm" onclick="playGame('Retro Invaders', 'https://html5.gamedistribution.com/2b56e6f98299449f85cb5b263b821430/')">Play</button>
                     </div>
                 </div>
 
             </div>
         </section>
-    </main>
-
-    <div id="gameModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeGame()">&times;</span>
-            <h3 id="modalGameTitle">Game Loading...</h3>
-            <div class="iframe-container">
-                <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
