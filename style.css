@@ -1,18 +1,259 @@
-/* Fixes game cards to display full image artwork properly */
-.card-thumb {
-    padding: 0 !important; /* Clears any old blank space around your grid card */
-    overflow: hidden;
+/* ==========================================================================
+   1. RESET & UNIVERSAL STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    background-color: #0b0b16; /* Deep dark space mode background */
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION LAYOUT
+   ========================================================================== */
+header {
+    background-color: #121225;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff007f; /* Neon pink border accents */
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
+}
+
+nav a {
+    color: #a0a0c0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #00f0ff; /* Bright Cyan active text highlight */
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* ==========================================================================
+   3. CONTENT CONTAINER & FEATURED BANNER
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.featured-section {
+    margin-bottom: 50px;
+}
+
+.featured-banner {
+    background: linear-gradient(135deg, #181830 0%, #0d0d1a 100%);
+    border: 2px solid #ff007f;
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(255, 0, 127, 0.15);
+}
+
+.featured-info h3 {
+    font-size: 36px;
+    color: #ff007f; /* Hot Neon Pink Title */
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
+}
+
+.featured-info p {
+    color: #cccccc;
+    max-width: 600px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.play-btn {
+    background-color: #ff007f;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);
+}
+
+/* ==========================================================================
+   4. POPULAR GAMES DISPLAY GRID
+   ========================================================================== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background-color: #121225;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #232345;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border-color: #00f0ff; /* Highlights cyan when pointing at cards */
+}
+
+/* Fixes thumbnail blocks to hold the images without overflow gaps */
+.card-thumb {
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Makes your external game covers size cleanly across custom panels */
 .game-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops image neatly inside card dimension borders without stretching */
+    object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
 }
 
-/* Adds a smooth zooming movement effect when a player hovers over a game card icon */
 .game-card:hover .game-img {
-    transform: scale(1.08);
+    transform: scale(1.06); /* Elegant Poki zoom mechanics */
+}
+
+.card-info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121225;
+}
+
+.card-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+}
+
+.play-btn-sm {
+    background-color: #00f0ff;
+    color: #0b0b16;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-btn-sm:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
+}
+
+/* ==========================================================================
+   5. POP-UP MODAL STREAMING PLAYER SCREEN
+   ========================================================================== */
+.modal {
+    display: none; /* Hidden on code load, toggled open by script.js */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 5, 10, 0.85); /* Smooth overlay backdrop darkout */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #121225;
+    margin: 4% auto;
+    padding: 20px;
+    border: 2px solid #00f0ff;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #ff007f;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
+
+#modalGameTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #00f0ff;
+}
+
+/* Creates a sharp, high-performance responsive wrapper window */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Golden 16:9 widescreen ratio dimensions */
+    background-color: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
