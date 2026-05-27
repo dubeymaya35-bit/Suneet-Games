@@ -1,85 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JODSuneetGames - Play Free HTML5 Arcade Games Online</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <div class="logo">🚀 RetroWave Games</div>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Arcade</a>
-            <a href="#">Action</a>
-            <a href="#">Casual</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section class="featured-section">
-            <h2>🔥 Featured Game</h2>
-            <div class="featured-banner">
-                <div class="featured-info">
-                    <h3>RocketFM</h3>
-                    <p>Tune into the right frequencies to navigate your rocket through space in this addictive, offline-ready arcade classic.</p>
-                    <button class="play-btn" onclick="playGame('RocketFM', 'https://example.com/rocketfm-game-link')">Play Now</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="games-section">
-            <h2>🎮 Popular Games</h2>
+<section class="games-section">
+            <h2>🎮 Top Play Store Games</h2>
             <div class="games-grid">
                 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #ff007f;">🕹️</div>
+                    <div class="card-thumb" style="background: #ffaa00;">🏃‍♂️</div>
                     <div class="card-info">
-                        <h4>Space Dodge</h4>
-                        <button class="play-btn-sm" onclick="playGame('Space Dodge', 'https://html5.gamedistribution.com/example1/')">Play</button>
+                        <h4>Subway Surfers</h4>
+                        <button class="play-btn-sm" onclick="playGame('Subway Surfers', 'https://html5.gamedistribution.com/c60010836940428fa69c1f6de7256cb7/')">Play</button>
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #7f00ff;">🧩</div>
+                    <div class="card-thumb" style="background: #ff007f;">🏍️</div>
                     <div class="card-info">
-                        <h4>Cyber Puzzle</h4>
-                        <button class="play-btn-sm" onclick="playGame('Cyber Puzzle', 'https://html5.gamedistribution.com/example2/')">Play</button>
+                        <h4>Moto X3M Bike Race</h4>
+                        <button class="play-btn-sm" onclick="playGame('Moto X3M Bike Race', 'https://html5.gamedistribution.com/a42df6422f984535b91b8f0bc277f093/')">Play</button>
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #00f0ff;">🚗</div>
+                    <div class="card-thumb" style="background: #00f0ff;">🎲</div>
                     <div class="card-info">
-                        <h4>Neon Racer</h4>
-                        <button class="play-btn-sm" onclick="playGame('Neon Racer', 'https://html5.gamedistribution.com/example3/')">Play</button>
+                        <h4>Ludo Mobile</h4>
+                        <button class="play-btn-sm" onclick="playGame('Ludo Mobile', 'https://html5.gamedistribution.com/974bf30894e64f7b889eb25139268f76/')">Play</button>
                     </div>
                 </div>
 
                 <div class="game-card">
-                    <div class="card-thumb" style="background: #ffaa00;">👾</div>
+                    <div class="card-thumb" style="background: #7f00ff;">🐍</div>
                     <div class="card-info">
-                        <h4>Retro Invaders</h4>
-                        <button class="play-btn-sm" onclick="playGame('Retro Invaders', 'https://html5.gamedistribution.com/example4/')">Play</button>
+                        <h4>Snake Mobile</h4>
+                        <button class="play-btn-sm" onclick="playGame('Snake Mobile', 'https://html5.gamedistribution.com/7d425332f9154a3698db78119c8f2b3e/')">Play</button>
                     </div>
                 </div>
 
             </div>
         </section>
-    </main>
-
-    <div id="gameModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeGame()">&times;</span>
-            <h3 id="modalGameTitle">Game Loading...</h3>
-            <div class="iframe-container">
-                <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
